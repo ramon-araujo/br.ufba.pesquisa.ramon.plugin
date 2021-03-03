@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            name="Selecionar projetos com modelos"
+            id="br.ufba.pesquisa.ramon.plugin.commands.selecionarProjetosComModelos">
+      </command>
+      <command
+            name="Gerar comandos PMD"
+            id="br.ufba.pesquisa.ramon.plugin.commands.gerarComandosPMDCommand">
+      </command>
+      <command
+            name="Gerar comandos Checkstyle"
+            id="br.ufba.pesquisa.ramon.plugin.commands.gerarComandosCheckstyleCommand">
+      </command>
+      <command
+            name="Analisar projetos com EMF Refactor"
+            id="br.ufba.pesquisa.ramon.plugin.commands.analisarProjetosComEmfRefactor">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="br.ufba.pesquisa.ramon.plugin.handlers.SelecionarProjetosComModelos"
+            commandId="br.ufba.pesquisa.ramon.plugin.commands.selecionarProjetosComModelos">
+      </handler>   
+      <handler
+            class="br.ufba.pesquisa.ramon.plugin.handlers.GerarComandosPmd"
+            commandId="br.ufba.pesquisa.ramon.plugin.commands.gerarComandosPMDCommand">
+      </handler>
+      <handler
+            class="br.ufba.pesquisa.ramon.plugin.handlers.GerarComandosCheckstyle"
+            commandId="br.ufba.pesquisa.ramon.plugin.commands.gerarComandosCheckstyleCommand">
+      </handler>
+      <handler
+            class="br.ufba.pesquisa.ramon.plugin.handlers.AnalisarComEmfRefactor"
+            commandId="br.ufba.pesquisa.ramon.plugin.commands.analisarProjetosComEmfRefactor">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="br.ufba.pesquisa.ramon.plugin.menus.mestrado"
+               label="Mestrado"
+               mnemonic="M">
+            <command
+                  commandId="br.ufba.pesquisa.ramon.plugin.commands.selecionarProjetosComModelos"
+                  mnemonic="S">
+            </command>   
+            <command
+                  commandId="br.ufba.pesquisa.ramon.plugin.commands.gerarComandosPMDCommand"
+                  mnemonic="G">
+            </command>
+            <command
+                  commandId="br.ufba.pesquisa.ramon.plugin.commands.gerarComandosCheckstyleCommand"
+                  mnemonic="C">
+            </command>
+            <command
+                  commandId="br.ufba.pesquisa.ramon.plugin.commands.analisarProjetosComEmfRefactor"
+                  mnemonic="E">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>
